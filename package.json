@@ -1,5 +1,5 @@
 {
-  "name": "ys-service",
+  "name": "rentory_model_controller",
   "version": "1.0.0",
   "description": "RESTful todoListApi",
   "main": "index.js",
