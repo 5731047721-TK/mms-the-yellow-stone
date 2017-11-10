@@ -3,6 +3,7 @@ var express = require('express'),
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'),
     Task = require('./backend/models/todoListModel'),
+    Dorm = require('./backend/models/dormModel'),
     bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
@@ -12,8 +13,10 @@ mongoose.connect('mongodb://ys-service:1234@ds157723.mlab.com:57723/ys-service?r
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
+ 
 var routes = require('./backend/routes/todoListRoutes');
+routes(app);
+var routes = require('./backend/routes/dormRoutes');
 routes(app);
 
 app.use(function(req, res) {
