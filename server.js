@@ -4,6 +4,7 @@ var express = require('express'),
     mongoose = require('mongoose'),
     Task = require('./backend/models/todoListModel'),
     Dorm = require('./backend/models/dormModel'),
+    Room = require('./backend/models/roomModel'),
     bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
@@ -17,6 +18,8 @@ app.use(bodyParser.json());
 var routes = require('./backend/routes/todoListRoutes');
 routes(app);
 var routes = require('./backend/routes/dormRoutes');
+routes(app);
+var routes = require('./backend/routes/roomRoutes');
 routes(app);
 
 app.use(function(req, res) {
