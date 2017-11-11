@@ -3,6 +3,9 @@
 module.exports = function(app) {
     var dormList = require('../controllers/dormController');
 
+    app.route('/api/dorm/search')
+        .get(dormList.search_dorm);
+
     // todoList Routes
     app.route('/api/dorm')
         .get(dormList.list_all_dorm)

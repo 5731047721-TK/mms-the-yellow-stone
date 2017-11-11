@@ -13,6 +13,23 @@ exports.list_all_dorm = function(req, res) {
   });
 };
 
+exports.search_dorm = function(req, res) {
+  console.log(typeof(req.query.name),'name');
+
+  var inputJson={};
+  if(req.query.name)inputJson.name={ $regex: req.query.name, "$options": "i" };
+  if(req.query.englishName)inputJson.englishName={ $regex: req.query.englishName, "$options": "i" };
+  if(req.query.nearby)inputJson.nearby={ $regex: req.query.nearby, "$options": "i" };
+  if(req.query.minPoint)inputJson.point={$gte:req.query.minPoint};
+  if(req.query.maxElePrice)inputJson.electricityPrice={$lte:req.query.maxElePrice};
+  if(req.query.maxWaterPrice)inputJson.waterPrice={$lte:req.query.maxWaterPrice};
+  if(req.query.maxInternetPrice)inputJson.internetPrice={$lte:req.query.maxInternetPrice};
+
+  Dorm.find(inputJson, function(err, dorm) {
+    if (err) res.send(err);
+    res.json(dorm);
+  });
+};
 
 exports.create_a_dorm = function(req, res) {
   var new_dorm = new Dorm(req.body);
