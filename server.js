@@ -21,6 +21,8 @@ var routes = require('./backend/routes/dormRoutes');
 routes(app);
 var routes = require('./backend/routes/roomRoutes');
 routes(app);
+var routes = require('./frontend/routes');
+routes(app);
 
 app.use(function(req, res) {
     res.status(404).send({ url: req.originalUrl + ' not found' })
