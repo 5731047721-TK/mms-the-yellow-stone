@@ -5,6 +5,7 @@ var express = require('express'),
     Task = require('./backend/models/todoListModel'),
     Dorm = require('./backend/models/dormModel'),
     Room = require('./backend/models/roomModel'),
+    User = require('./backend/models/userModel')
     bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
@@ -22,6 +23,8 @@ routes(app);
 var routes = require('./backend/routes/roomRoutes');
 routes(app);
 var routes = require('./frontend/routes');
+routes(app);
+var routes = require('./backend/routes/userRoutes');
 routes(app);
 
 app.use(function(req, res) {
