@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <style>
+        h1 {
+            color:royalblue;
+            font-family: System Bold;
+            font-size: 300%;
+        }
+    </style>
+    <title>Register</title>
+  </head>
+  <body>
+    <div>
+      <div align="center" style=" height: 15% ;background-color: white;">
+          <img align="center" style="padding:2.5%; width: 35%" src="../public/images/Rentory.png" alt=""/>
+      </div>
+      <div>
+      <nav align="center"  class="container navbar center" role="navigation" style="background-color: white; border-color: white"  >
+          <ul align="center" class= "nav navbar-nav" style="width: 100%">
+            <!--didnt link the route on sever.js yet-->
+            <li class="col-lg-2"><a style="color: black; font-size:.5cm" href="/index">Home</a></li>
+            <!-- <li class="active"><a href="/addDorm">Dormitory<span class="sr-only">(current)</span></a></li> -->
+            <li class="col-lg-2"><a style="color: black; font-size:.5cm" href="/Search">Search</a></li>
+            <li class="col-lg-2"><a style="color: black; font-size:.5cm" href="/Review">Review</a></li>
+            <li class="col-lg-2"><a style="color: black; font-size:.5cm" href="/Login">Login</a></li>
+            <li class="col-lg-2"><a style="color: black; font-size:.5cm" href="/Contact">Contact us</a></li>
+            <li class="col-lg-2"><a style="color: black; font-size:.5cm" href="/Setting">Setting</a></li>
+          </ul>
+      </nav>
+      </div>
+      </div>
+    <br/>
+    <h1 align="center" >Register
+    </h1>
+    <div class="panel-body">
+      <!--didnt link the route on sever.js yet-->
+      <form method="post" action="/register">
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            <h4>Username ชื่อในการใช้งาน</h4>
+            <input type="text" name="input_uname" placeholder="InwNinJa" maxlength="20" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+              <h4>Password พาสเวิร์ด</h4>
+              <input type="password" name="input_password" placeholder="⚫⚫⚫⚫⚫⚫⚫⚫" maxlength="20" class="form-control">
+            </div>
+            <div class="col-sm-3">
+              <h4>Confirm password ยืนยันพาสเวิร์ด</h4>
+              <input type="password" name="input_confirm_password" placeholder="⚫⚫⚫⚫⚫⚫⚫⚫" maxlength="20" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-3">
+            <h4>First name ชื่อจริง</h4>
+            <input type="text" name="input_fname" placeholder="Ninja" maxlength="20" class="form-control">
+          </div>
+          <div class="col-sm-3">
+            <h4>Last name นามสกุล</h4>
+            <input type="text" name="input_lname" placeholder="Jatingja" maxlength="20" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-3">
+            <h4>Phone number เบอร์ติดต่อ</h4>
+            <input type="text" name="input_phone_number" placeholder="000-000-0000" maxlength="10" class="form-control">
+          </div>
+          <div class="col-sm-3">
+            <h4>E-mail อีเมล</h4>
+            <input type="text" name="input_email" placeholder="Inwninja@yellowsto.ne" maxlength="50" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-3">
+            <h4>Member type ประเภทสมาชิก</h4>
+            <label class="radio-inline"><input type="radio" name="renter">Renter ผู้ให้เช่า</label>
+            <label class="radio-inline"><input type="radio" name="rentee">Rentee ผู้เช่า</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"></div>
+           <div class="col-sm-6">
+             <h4>Upload avatar picture อัพโหลดรูปประจำตัว</h4>
+             <button type="submit" class="btn btn-md btn-primary">Upload</button>
+           </div>
+        </div>
+        <div class="row">
+            <br/>
+            <br/>
+            <div class="col-sm-7"></div>
+            <div class="col-sm-1">
+              <!--didnt finish cancel button yet-->
+              <button type="reset" class="btn btn-md btn-warning">Cancel</button>
+            </div>
+            <div class="col-sm-1">
+                <button type="submit" class="btn btn-md btn-warning">Submit</button>
+            </div>
+        </div>
+      </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
